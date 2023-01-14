@@ -1,32 +1,31 @@
 [build-system]
-# requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
-requires = ["setuptools>=45"]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "myproject"
-description = "Description"
+name = "maglib-python"
+description = "Magara's useful Python modules."
 readme = "README.md"
-license = {file = "LICENSE"}
-authors = [{ name = "Keisuke Magara", email = "Keisuke-Magara.dev@outlook.com"}]
+license = { file = "LICENSE" }
+authors = [
+    { name = "Keisuke Magara", email = "Keisuke-Magara.dev@outlook.com" },
+]
 classifiers = [
     "Programming Language :: Python :: 3.10",
     "License :: OSI Approved :: MIT License",
 ]
 requires-python = ">=3.10"
-dependencies = [
-    
-]
+dependencies = []
 dynamic = ["version"]
 
 [project.urls]
 repository = "https://github.com/Keisuke-Magara/maglib-python"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = { "" = "src" }
 
 [tool.setuptools.dynamic]
-version = {attr = "src.maglib.version"}
+version = { attr = "setuptools_scm.get_version" }
 
 [tool.setuptools_scm]
 write_to = "src/maglib/_version.py"
